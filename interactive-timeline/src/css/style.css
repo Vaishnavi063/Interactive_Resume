@@ -1,0 +1,178 @@
+/* Global Styles */
+:root {
+    --primary-color: #00bff3;
+    --secondary-color: #ed1c24;
+    --text-color: #333;
+    --background-color: #87ceeb;
+    --ground-color: #90EE90;
+    --building-color: #808080;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    background-color: var(--background-color);
+}
+
+/* Game Container */
+#game-container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+/* Header Section */
+#header-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner {
+    background-color: var(--secondary-color);
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    transform: rotate(-5deg);
+    margin-bottom: 2rem;
+}
+
+#character {
+    width: 50px;
+    height: 50px;
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    position: absolute;
+    bottom: 20%;
+    transition: all 0.3s ease;
+}
+
+/* Ground */
+.ground {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20%;
+    background-color: var(--ground-color);
+    background-image: linear-gradient(45deg, #85c185 25%, transparent 25%),
+                      linear-gradient(-45deg, #85c185 25%, transparent 25%);
+    background-size: 20px 20px;
+}
+
+/* Buildings */
+.buildings-container {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+}
+
+.building {
+    background-color: var(--building-color);
+    width: 100px;
+    position: relative;
+    transition: height 0.3s ease;
+}
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.skill-level {
+    width: 100%;
+    height: 200px;
+    background-color: var(--primary-color);
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+/* Experience Timeline */
+.experience-timeline {
+    position: relative;
+    padding: 2rem;
+}
+
+.experience-item {
+    position: relative;
+    padding: 1rem;
+    margin: 1rem 0;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Controls */
+#controls {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0,0,0,0.7);
+    color: white;
+    padding: 1rem;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+/* Animations */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.floating {
+    animation: float 2s ease-in-out infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .building {
+        width: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .building {
+        width: 40px;
+    }
+} 

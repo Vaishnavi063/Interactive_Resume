@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Story Timeline</title>
+    <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+    <div id="story-container">
+        <!-- Parallax Background Layers -->
+        <div class="parallax-layers">
+            <div class="layer layer-bg" data-speed="0.1"></div>
+            <div class="layer layer-mountains" data-speed="0.2"></div>
+            <div class="layer layer-trees" data-speed="0.3"></div>
+            <div class="layer layer-ground" data-speed="0.4"></div>
+        </div>
+
+        <!-- Story Guide Character -->
+        <div id="robby" class="guide-character">
+            <div class="character-sprite"></div>
+            <div class="speech-bubble hidden">
+                <p>Hi! I'm Robby. Let me guide you through this journey!</p>
+            </div>
+        </div>
+
+        <!-- Timeline Path -->
+        <div class="timeline-path">
+            <!-- Timeline nodes will be added dynamically -->
+        </div>
+
+        <!-- Story Sections -->
+        <div class="story-sections">
+            <!-- Introduction -->
+            <section id="intro" class="story-section active">
+                <div class="section-content">
+                    <h1>The Journey Begins</h1>
+                    <div class="scene">
+                        <!-- Scene elements will be added dynamically -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education -->
+            <section id="education" class="story-section">
+                <div class="section-content">
+                    <h2>Learning Path</h2>
+                    <div class="scene">
+                        <!-- Educational milestones will be added here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience -->
+            <section id="experience" class="story-section">
+                <div class="section-content">
+                    <h2>Adventures & Achievements</h2>
+                    <div class="scene">
+                        <!-- Work experiences will be visualized here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills -->
+            <section id="skills" class="story-section">
+                <div class="section-content">
+                    <h2>Powers Acquired</h2>
+                    <div class="scene">
+                        <!-- Skill visualizations will be added here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects -->
+            <section id="projects" class="story-section">
+                <div class="section-content">
+                    <h2>Quests Completed</h2>
+                    <div class="scene">
+                        <!-- Project showcases will be added here -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Navigation Controls -->
+        <div class="navigation-controls">
+            <button class="nav-btn prev-btn" disabled>Previous</button>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+            <button class="nav-btn next-btn">Next</button>
+        </div>
+
+        <!-- Environment Elements -->
+        <div class="environment">
+            <div class="clouds"></div>
+            <div class="stars"></div>
+            <div class="particles"></div>
+        </div>
+    </div>
+
+    <!-- Story Parser Form -->
+    <div id="story-input" class="modal hidden">
+        <div class="modal-content">
+            <h2>Share Your Story</h2>
+            <form id="resume-upload">
+                <div class="form-group">
+                    <label for="resume-file">Upload your resume (PDF/DOC)</label>
+                    <input type="file" id="resume-file" accept=".pdf,.doc,.docx">
+                </div>
+                <div class="form-group">
+                    <label for="resume-text">Or paste your resume text</label>
+                    <textarea id="resume-text" rows="10"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Create My Story</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="src/js/parser.js"></script>
+    <script src="src/js/animator.js"></script>
+    <script src="src/js/story.js"></script>
+    <script src="src/js/main.js"></script>
+</body>
+</html> 
